@@ -12,9 +12,8 @@ import ItemTypes from "./ItemTypes";
 import Box from "./Box";
 
 const styles = {
-  width: 300,
-  height: 300,
-  border: "1px solid black",
+  width: "100vw",
+  height: "100vh",
   position: "relative"
 };
 
@@ -41,8 +40,19 @@ export default DragDropContext(HTML5Backend)(
         super(props);
         this.state = {
           boxes: {
-            a: { top: 20, left: 80, title: "Drag me around" },
-            b: { top: 180, left: 20, title: "Drag me too" }
+            a: { top: 20, left: 20, brand: "disney" },
+            b: { top: 40, left: 40, brand: "quibi" },
+            c: { top: 60, left: 60, brand: "netflix" },
+            d: { top: 80, left: 80, brand: "go90" },
+            e: { top: 100, left: 100, brand: "hbo" },
+            f: { top: 100, left: 100, brand: "warnermedia" },
+            g: { top: 100, left: 100, brand: "hulu" },
+            g: { top: 100, left: 100, brand: "filmstruck" },
+            h: { top: 100, left: 100, brand: "criterion" },
+            i: { top: 100, left: 100, brand: "youtube" },
+            j: { top: 100, left: 100, brand: "hulu" },
+            l: { top: 100, left: 100, brand: "primevideo" },
+            m: { top: 100, left: 100, brand: "itunes" }
           }
         };
       }
@@ -56,7 +66,7 @@ export default DragDropContext(HTML5Backend)(
           connectDropTarget(
             <div style={styles}>
               {Object.keys(boxes).map(key => {
-                const { left, top, title } = boxes[key];
+                const { left, top, brand } = boxes[key];
                 return (
                   <Box
                     key={key}
@@ -65,10 +75,13 @@ export default DragDropContext(HTML5Backend)(
                     top={top}
                     hideSourceOnDrag={hideSourceOnDrag}
                   >
-                    {title}
+                    <img src={`images/${brand}.png`} />
                   </Box>
                 );
               })}
+              <div class="scale">
+                <div class="dotted-line" />
+              </div>
             </div>
           )
         );
