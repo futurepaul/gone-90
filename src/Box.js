@@ -1,7 +1,6 @@
 import * as React from "react";
-import { DragSource, ConnectDragSource } from "react-dnd";
+import { DragSource } from "react-dnd";
 import ItemTypes from "./ItemTypes";
-import { white } from "ansi-colors";
 
 const style = {
   position: "absolute",
@@ -36,7 +35,7 @@ export default DragSource(ItemTypes.BOX, boxSource, (connect, monitor) => ({
       return (
         connectDragSource &&
         connectDragSource(
-          <div class="logo" style={{ ...style, left, top }}>
+          <div className="logo" style={{ ...style, left, top }}>
             {children}
           </div>
         )

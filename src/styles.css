@@ -164,3 +164,27 @@ img {
 .static-box {
   background-color: "white";
 }
+
+button {
+  position: absolute;
+  bottom: 0;
+  color: white;
+
+  padding: 1rem;
+  font-weight: bold;
+}
+
+button.quibi {
+  right: 0;
+  background: linear-gradient(
+    135deg,
+    rgb(79, 120, 255),
+    rgb(0, 0, 161),
+    rgb(230, 50, 80)
+  );
+}
+
+button.piracy {
+  background: black;
+  right: 10rem;
+}
